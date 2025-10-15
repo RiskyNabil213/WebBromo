@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FAFAF9; /* stone-50 */
+    --color-foreground: #1C1917; /* stone-900 */
+    --color-card: #F5F5F4; /* stone-100 */
+    --color-card-foreground: #1C1917; /* stone-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1C1917; /* stone-900 */
+    --color-muted: #F5F5F4; /* stone-100 */
+    --color-muted-foreground: #78716C; /* stone-500 */
+    
+    /* Border and Input */
+    --color-border: #E7E5E4; /* stone-200 */
+    --color-input: #E7E5E4; /* stone-200 */
+    --color-ring: #D97706; /* amber-600 */
+    
+    /* Brand Colors */
+    --color-primary: #D97706; /* amber-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #7C2D12; /* red-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    --color-accent: #F59E0B; /* amber-500 */
+    --color-accent-foreground: #1C1917; /* stone-900 */
+    
+    /* Status Colors */
+    --color-success: #16A34A; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #EA580C; /* orange-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Typography Colors */
+    --color-text-primary: #1C1917; /* stone-900 */
+    --color-text-secondary: #78716C; /* stone-500 */
+    
+    /* Surface Colors */
+    --color-surface: #F5F5F4; /* stone-100 */
+    --color-surface-foreground: #1C1917; /* stone-900 */
+    
+    /* Volcanic Theme Colors */
+    --color-volcanic-orange: #FF4500; /* orange-red */
+    --color-volcanic-brown: #8B4513; /* saddle-brown */
+    --color-volcanic-ash: #8B7D6B; /* warm-gray */
+    --color-sunrise-orange: #FF6B35; /* coral */
+    --color-earth-brown: #D2691E; /* chocolate */
+    --color-volcanic-red: #DC143C; /* crimson */
+    --color-forest-green: #2E8B57; /* sea-green */
+    --color-warm-cream: #FFF8DC; /* cornsilk */
+    --color-volcanic-deep: #2C1810; /* dark-brown */
+    
+    /* Animation Variables */
+    --animation-duration-fast: 0.15s;
+    --animation-duration-normal: 0.3s;
+    --animation-duration-slow: 0.6s;
+    --animation-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 0.75rem; /* 12px */
+    --spacing-md: 1.25rem; /* 20px */
+    --spacing-lg: 2rem; /* 32px */
+    --spacing-xl: 3.25rem; /* 52px */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+  
+  .font-accent {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Volcanic Glow Effects */
+  .volcanic-glow {
+    box-shadow: 
+      0 2px 8px rgba(255, 107, 53, 0.15),
+      0 8px 32px rgba(139, 69, 19, 0.1);
+  }
+  
+  .volcanic-glow-intense {
+    box-shadow: 
+      0 4px 12px rgba(255, 69, 0, 0.25),
+      0 12px 40px rgba(220, 20, 60, 0.15);
+  }
+  
+  /* Seismic Micro-Interactions */
+  .seismic-hover {
+    transition: transform var(--animation-duration-fast) var(--animation-easing);
+  }
+  
+  .seismic-hover:hover {
+    animation: seismic-shake 0.3s ease-in-out;
+  }
+  
+  @keyframes seismic-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    75% { transform: translateX(1px); }
+  }
+  
+  /* Volcanic Particle Animation */
+  .volcanic-particles {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .volcanic-particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, var(--color-volcanic-ash), transparent),
+      radial-gradient(2px 2px at 40px 70px, var(--color-volcanic-ash), transparent),
+      radial-gradient(1px 1px at 90px 40px, var(--color-volcanic-ash), transparent);
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    animation: volcanic-float 15s linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  
+  @keyframes volcanic-float {
+    0% { transform: translate3d(0, 100%, 0); }
+    100% { transform: translate3d(0, -100%, 0); }
+  }
+  
+  /* Sunrise Gradient Backgrounds */
+  .sunrise-gradient {
+    background: linear-gradient(135deg, 
+      var(--color-volcanic-deep) 0%,
+      var(--color-volcanic-brown) 25%,
+      var(--color-sunrise-orange) 50%,
+      var(--color-accent) 75%,
+      var(--color-warm-cream) 100%
+    );
+  }
+  
+  .pre-dawn-gradient {
+    background: linear-gradient(180deg,
+      var(--color-volcanic-deep) 0%,
+      #4A3728 50%,
+      var(--color-volcanic-brown) 100%
+    );
+  }
+  
+  /* Glassmorphic Effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Smooth Transitions */
+  .smooth-transition {
+    transition: all var(--animation-duration-normal) var(--animation-easing);
+  }
+  
+  /* Scroll Snap */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scroll-snap-item {
+    scroll-snap-align: center;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-muted);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-volcanic {
+    @apply bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold px-6 py-3 rounded-lg;
+    @apply hover:from-orange-600 hover:to-red-600 transform hover:scale-105;
+    @apply transition-all duration-300 ease-out volcanic-glow;
+  }
+  
+  .btn-earth {
+    @apply bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold px-6 py-3 rounded-lg;
+    @apply hover:from-amber-700 hover:to-orange-700 seismic-hover;
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  /* Card Variants */
+  .card-volcanic {
+    @apply bg-card border border-border rounded-xl p-6 volcanic-glow;
+    @apply hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .card-glass {
+    @apply glass-card rounded-xl p-6 backdrop-blur-sm;
+    @apply hover:bg-white/20 transition-all duration-300;
+  }
+  
+  /* Text Variants */
+  .text-volcanic {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600;
+  }
+  
+  .text-earth {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 53, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.8); }
+  }
+  
+  /* Spacing Utilities */
+  .space-volcanic > * + * {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Background Utilities */
+  .bg-volcanic-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.1) 0%, transparent 50%);
+  }
+}
