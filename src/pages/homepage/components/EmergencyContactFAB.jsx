@@ -10,7 +10,7 @@ const EmergencyContactFAB = () => {
     {
       id: 1,
       label: "Emergency Hotline",
-      number: "+62 857-9051-9397",
+      number: "+62 812-3456-7890",
       icon: "Phone",
       color: "bg-red-500 hover:bg-red-600",
       description: "24/7 Emergency Support"
@@ -18,7 +18,7 @@ const EmergencyContactFAB = () => {
     {
       id: 2,
       label: "WhatsApp Support",
-      number: "+62 857-9051-9397",
+      number: "+62 813-4567-8901",
       icon: "MessageCircle",
       color: "bg-green-500 hover:bg-green-600",
       description: "Instant Chat Support"
@@ -176,17 +176,17 @@ const EmergencyContactFAB = () => {
             <div className="flex items-center justify-between">
               <span className="text-text-secondary">24/7 Hotline:</span>
               <button
-                onClick={() => handleCall("+6285749502138")}
+                onClick={() => handleCall("+62 812-3456-7890")}
                 className="text-primary hover:underline font-medium"
               >
-              +6285749502138
+                +62 812-3456-7890
               </button>
             </div>
             
             <div className="flex items-center justify-between">
               <span className="text-text-secondary">WhatsApp:</span>
               <button
-                onClick={() => handleWhatsApp("+6285749502138")}
+                onClick={() => handleWhatsApp("+62 813-4567-8901")}
                 className="text-green-600 hover:underline font-medium"
               >
                 Chat Now

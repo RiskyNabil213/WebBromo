@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Image from '../../../components/appImage';
+import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+
 const FeaturedSection = ({ featuredPhotos, onPhotoClick }) => {
   return (
     <div className="bg-gradient-to-br from-primary/5 to-accent/5 py-12">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from '../../../components/appImage';
+import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 

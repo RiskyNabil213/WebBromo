@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
-import Image from '../../../components/appImage';
+import Image from '../../../components/AppImage';
 
 const CulturalGuide = () => {
   const [activeSection, setActiveSection] = useState('overview');

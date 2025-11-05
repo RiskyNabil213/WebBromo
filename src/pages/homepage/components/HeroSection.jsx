@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
-import Image from '../../../components/appImage';
+import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 
 const HeroSection = () => {

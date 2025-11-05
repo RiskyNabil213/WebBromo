@@ -260,9 +260,9 @@ const BromoGuide = () => {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-white/80">
-                <li>Emergency: +6285749502138</li>
+                <li>Emergency: +62 335 541 821</li>
                 <li>Info: info@bromohub.com</li>
-                <li>WhatsApp: +6285790519397</li>
+                <li>WhatsApp: +62 812 3456 7890</li>
               </ul>
             </div>
           </div>
